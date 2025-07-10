@@ -1,5 +1,5 @@
 
-#include "Character/BallPlayer.h"
+#include "BallPlayer.h"
 #include "Components/StaticMeshComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"

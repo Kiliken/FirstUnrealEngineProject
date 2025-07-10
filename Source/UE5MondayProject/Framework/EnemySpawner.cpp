@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Framework/EnemySpawner.h"
+#include "EnemySpawner.h"
 #include "Kismet/KismetSystemLibrary.h" // ’Ç‰Á
 #include "Kismet/GameplayStatics.h" // ’Ç‰Á
 

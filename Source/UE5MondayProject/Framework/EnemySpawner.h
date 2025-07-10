@@ -2,21 +2,20 @@
 
 #pragma once
 
-#include "MyRand.h"
-#include "time.h"
 #include "CoreMinimal.h"
+#include "../Character/EnemyActor.h"
 #include "GameFramework/Actor.h"
-#include "EnemyActor.generated.h"
+#include "EnemySpawner.generated.h"
 
 
 UCLASS()
-class UE5MONDAYPROJECT_API AEnemyActor : public AActor
+class UE5MONDAYPROJECT_API AEnemySpawner : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	AEnemyActor();
+	AEnemySpawner();
 
 protected:
 	// Called when the game starts or when spawned
@@ -26,16 +25,13 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-public:
-	// Character —p‚Ì StaticMesh : Sphere
-	UPROPERTY(VisibleAnywhere, Category = Character, meta = (AllowPrivateAccess = "true"))
-	TObjectPtr<UStaticMeshComponent> m_Sphere;
-
-	bool _isAlive = true;
-
 private:
-	FVector _randomPos;
+	float const SPAWN_TIME = 3.f;
+	FVector const SPAWN_POS = FVector(500, 500, 100);
 
-	MyRand _randNum;
-	AActor* _player;
+	float _timer = 0;
+	bool _inGame = true;
+	int _score = 0;
+	AEnemyActor *_pA[20];
+	
 };
