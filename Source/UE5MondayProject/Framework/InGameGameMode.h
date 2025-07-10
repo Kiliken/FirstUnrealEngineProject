@@ -25,13 +25,6 @@ public:
 
 protected:
 
-#if 0
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
-	TSubclassOf<class UUserWidget> BasicHUDClass;
-
-	UPROPERTY()
-	class UUserWidget* CurrentWidget;
-#endif
 
 
 

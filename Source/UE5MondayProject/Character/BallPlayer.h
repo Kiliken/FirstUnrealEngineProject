@@ -42,6 +42,9 @@ protected:
 	UPROPERTY(EditAnywhere, Category = Input)
 	class UInputAction* SprintInput;
 
+	UPROPERTY(EditAnywhere, Category = Input)
+	class UInputAction* PauseInput;
+
 public:
 	
 	virtual void Tick(float DeltaTime) override;
@@ -71,6 +74,8 @@ private:
 
 	void SprintIn();
 	void SprintOut();
+
+	void PauseGame();
 
 	
 	void PressedAxis(const FInputActionValue& Value);

@@ -8,6 +8,7 @@
 #include "Components/InputComponent.h" 
 #include "EnhancedInputComponent.h" 
 #include "EnhancedInputSubsystems.h" 
+#include "../MenuHUD.h"
 
 
 
@@ -63,7 +64,7 @@ ABallPlayer::ABallPlayer()
 	AxisInput = LoadObject<UInputAction>(NULL, TEXT("/Game/Input/Actions/IA_Axis"), NULL, LOAD_None, NULL);
 	CameraAxisInput = LoadObject<UInputAction>(NULL, TEXT("/Game/Input/Actions/IA_CameraAxis"), NULL, LOAD_None, NULL);
 	SprintInput = LoadObject<UInputAction>(NULL, TEXT("/Game/Input/Actions/IA_Sprint"), NULL, LOAD_None, NULL);
-
+	PauseInput = LoadObject<UInputAction>(NULL, TEXT("/Game/Input/Actions/IA_Pause"), NULL, LOAD_None, NULL);
 	
 	DefaultMappingContext = LoadObject<UInputMappingContext>(NULL, TEXT("/Game/Input/IMC_Default"), NULL, LOAD_None, NULL);
 }
@@ -99,6 +100,7 @@ void ABallPlayer::SetupInput() {
 			EnhancedInputComponent->BindAction(AxisInput, ETriggerEvent::Triggered, this, &ABallPlayer::PressedAxis);
 			EnhancedInputComponent->BindAction(CameraAxisInput, ETriggerEvent::Triggered, this, &ABallPlayer::CameraAxisMovement);
 
+			EnhancedInputComponent->BindAction(PauseInput, ETriggerEvent::Triggered, this, &ABallPlayer::PauseGame);
 		}
 
 		if (APlayerController* PlayerController = Cast<APlayerController>(controller))
@@ -184,6 +186,14 @@ void ABallPlayer::SprintIn() {
 void ABallPlayer::SprintOut()
 {
 	velocity = 5.f;
+}
+
+void ABallPlayer::PauseGame()
+{
+	//if (AMenuHUD* MenuHUD = Cast<AMenuHUD>()
+	{
+
+	}
 }
 
 

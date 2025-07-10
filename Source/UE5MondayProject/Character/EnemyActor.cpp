@@ -17,13 +17,13 @@ AEnemyActor::AEnemyActor()
 
 	UStaticMesh* Mesh = LoadObject<UStaticMesh>(nullptr, TEXT("/Engine/BasicShapes/Sphere"));
 
-	// StaticMesh‚ğStaticMeshComponent‚Éİ’è‚·‚é
+	// StaticMeshï¿½ï¿½StaticMeshComponentï¿½Éİ’è‚·ï¿½ï¿½
 	m_Sphere->SetStaticMesh(Mesh);
 
-	// Material‚ğStaticMesh‚Éİ’è‚·‚é
+	// Materialï¿½ï¿½StaticMeshï¿½Éİ’è‚·ï¿½ï¿½
 	UMaterial* Material = LoadObject<UMaterial>(nullptr, TEXT("/Engine/BasicShapes/BasicShapeMaterial"));
 
-	// Material‚ğStaticMeshComponent‚Éİ’è‚·‚é
+	// Materialï¿½ï¿½StaticMeshComponentï¿½Éİ’è‚·ï¿½ï¿½
 	m_Sphere->SetMaterial(0, Material);
 	m_Sphere->SetStaticMesh(Mesh);
 	m_Sphere->SetupAttachment(RootComponent);

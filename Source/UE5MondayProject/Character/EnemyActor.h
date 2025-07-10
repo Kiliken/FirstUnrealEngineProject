@@ -27,7 +27,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 public:
-	// Character —p‚Ì StaticMesh : Sphere
+
 	UPROPERTY(VisibleAnywhere, Category = Character, meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<UStaticMeshComponent> m_Sphere;
 

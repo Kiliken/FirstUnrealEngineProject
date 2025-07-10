@@ -8,6 +8,6 @@ pushd %thisPath%
 for %%a in (%projExt%) do set projName=%%a
 popd
 
-call %compiler% %projName:~0,-9%Editor Win64 Development "%thisPath%\%projName%" -waitmutex -NoHotReload
+call %compiler% %projName:~0,-9%Editor Win64 Development "%thisPath%\%projName%" -waitmutex
 
 pause

@@ -8,4 +8,4 @@ pushd %thisPath%
 for %%a in (%projExt%) do set projName=%%a
 popd
 
-%unreal% "%thisPath%\%projName%" -game -log -windowed -resx=1280 -resy=720
+%unreal% "%thisPath%\%projName%" -game -windowed -resx=1280 -resy=720
