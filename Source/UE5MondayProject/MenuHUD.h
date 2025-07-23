@@ -16,14 +16,18 @@ class UE5MONDAYPROJECT_API AMenuHUD : public AHUD
 
 protected:
 	TSharedPtr<class SMainMenuWidget> MenuWidget;
+	TSharedPtr<class SInGameWidget> GameWidget;
 	TSharedPtr<class SWidget> MenuWidgetContainer;
 
 	virtual void BeginPlay() override;
 
 public:
 
+	int points = 0;
 
+	void ShowGame();
 	void ShowMenu();
 	void HideMenu();
+	void AddPoints();
 
 };

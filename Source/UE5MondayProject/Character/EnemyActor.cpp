@@ -4,6 +4,8 @@
 #include "EnemyActor.h"
 #include "BallPlayer.h"
 #include "Kismet/GameplayStatics.h"
+#include "../MenuHUD.h"
+#include "../PUtils.cpp"
 
 
 
@@ -69,7 +71,13 @@ void AEnemyActor::Tick(float DeltaTime)
 	
 	if (FVector::Distance(pos, playerPos) <= 100.f) {
 		this->K2_DestroyActor();
+		if (AMenuHUD* MenuHUD = Cast<AMenuHUD>(PUTILS::GetActorByName("MenuHUD0", GetWorld())))
+		{
+			MenuHUD->AddPoints();
+		}
+		else UE_LOG(LogTemp, Display, TEXT("NO SUCH ACTOR"));
 		_isAlive = false;
 	}
 }
+
 

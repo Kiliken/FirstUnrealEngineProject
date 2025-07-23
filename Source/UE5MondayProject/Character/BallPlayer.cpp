@@ -194,6 +194,7 @@ void ABallPlayer::PauseGame()
 	//AActor* test = PUTILS::GetActorByName("AMenuHUD0", GetWorld());
 	if (AMenuHUD* MenuHUD = Cast<AMenuHUD>(PUTILS::GetActorByName("MenuHUD0", GetWorld())))
 	{
+		MenuHUD->HideMenu();
 		MenuHUD->ShowMenu();
 	}
 	else UE_LOG(LogTemp, Display, TEXT("NO SUCH ACTOR"));

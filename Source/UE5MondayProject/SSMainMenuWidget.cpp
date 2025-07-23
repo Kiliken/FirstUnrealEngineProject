@@ -88,6 +88,7 @@ END_SLATE_FUNCTION_BUILD_OPTIMIZATION
 FReply SMainMenuWidget::OnPlayClicked() const{
 	if (OwningHUD.IsValid()) {
 		OwningHUD->HideMenu();
+		OwningHUD->ShowGame();
 	}
 
 	return FReply::Handled();
