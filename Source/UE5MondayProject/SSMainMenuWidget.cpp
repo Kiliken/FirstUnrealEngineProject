@@ -87,9 +87,7 @@ END_SLATE_FUNCTION_BUILD_OPTIMIZATION
 
 FReply SMainMenuWidget::OnPlayClicked() const{
 	if (OwningHUD.IsValid()) {
-		//OwningHUD->HideMenu();
-		
-		
+		OwningHUD->HideMenu();
 	}
 
 	return FReply::Handled();
@@ -98,6 +96,10 @@ FReply SMainMenuWidget::OnPlayClicked() const{
 FReply SMainMenuWidget::OnQuitClicked() const {
 	if (OwningHUD.IsValid()) {
 		FGenericPlatformMisc::RequestExit(false);
+
+		if (APlayerController* PC = OwningHUD->PlayerOwner) {
+			PC->ConsoleCommand("quit");
+		}
 	}
 
 	return FReply::Handled();

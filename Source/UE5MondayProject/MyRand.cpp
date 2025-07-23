@@ -23,9 +23,9 @@ void MyRand::initSeed(const unsigned int seed)
 
 unsigned int MyRand::rand()
 {
-	// š‚±‚±‚É“Æ©—”‚ÌŒvZ‚ğ“ü‚ê‚é
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É“Æï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÌŒvï¿½Zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-	// «ŠİƒIƒŠƒWƒiƒ‹‚Ì—”ŒvZ
+	// ï¿½ï¿½ï¿½İƒIï¿½ï¿½ï¿½Wï¿½iï¿½ï¿½ï¿½Ì—ï¿½ï¿½ï¿½ï¿½vï¿½Z
 	unsigned int r = _mySeed * 11111 + 55555;
 	_mySeed = r;
 	r += r / 128;

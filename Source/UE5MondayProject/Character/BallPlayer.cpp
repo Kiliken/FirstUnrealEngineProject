@@ -9,6 +9,7 @@
 #include "EnhancedInputComponent.h" 
 #include "EnhancedInputSubsystems.h" 
 #include "../MenuHUD.h"
+#include "../PUtils.cpp"
 
 
 
@@ -190,10 +191,12 @@ void ABallPlayer::SprintOut()
 
 void ABallPlayer::PauseGame()
 {
-	//if (AMenuHUD* MenuHUD = Cast<AMenuHUD>()
+	//AActor* test = PUTILS::GetActorByName("AMenuHUD0", GetWorld());
+	if (AMenuHUD* MenuHUD = Cast<AMenuHUD>(PUTILS::GetActorByName("MenuHUD0", GetWorld())))
 	{
-
+		MenuHUD->ShowMenu();
 	}
+	else UE_LOG(LogTemp, Display, TEXT("NO SUCH ACTOR"));
 }
 
 

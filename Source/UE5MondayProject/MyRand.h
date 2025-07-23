@@ -14,20 +14,20 @@ public:
 	~MyRand();
 public:
 	//----------------------------------------------------------------------
-	// ’è”
+	// ï¿½è”
 
-	static const int MYRAND_MIN = 0;		// —”Å¬’l
-	static const int MYRAND_MAX = 3000;		// —”Å‘å’l
+	static const int MYRAND_MIN = 0;		// ï¿½ï¿½ï¿½ï¿½ï¿½Åï¿½ï¿½l
+	static const int MYRAND_MAX = 3000;		// ï¿½ï¿½ï¿½ï¿½ï¿½Å‘ï¿½l
 
 	//----------------------------------------------------------------------
-	// ƒƒ\ƒbƒh						// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	void initSeed(const unsigned int seed);	// ƒV[ƒh’l‚Ì‰Šú‰»
-	unsigned int rand();					// “Æ©—”		// ƒxƒ“ƒ`ƒ}[ƒN
+	// ï¿½ï¿½ï¿½\ï¿½bï¿½h						// ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
+	void initSeed(const unsigned int seed);	// ï¿½Vï¿½[ï¿½hï¿½lï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
+	unsigned int rand();					// ï¿½Æï¿½ï¿½ï¿½ï¿½ï¿½		// ï¿½xï¿½ï¿½ï¿½`ï¿½}ï¿½[ï¿½N
 
 private:
 	//----------------------------------------------------------------------
-	// ƒtƒB[ƒ‹ƒh
+	// ï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½h
 
-	unsigned int _mySeed = 0;		// “Æ©—”‚Ìƒ‰ƒ“ƒ_ƒ€ƒV[ƒh’l
+	unsigned int _mySeed = 0;		// ï¿½Æï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìƒï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½Vï¿½[ï¿½hï¿½l
 
 };
