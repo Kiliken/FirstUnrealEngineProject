@@ -1,7 +1,9 @@
 @echo off
 
 set thisPath=%cd%
-set compiler="C:\Program Files\Epic Games\UE_5.5\Engine\Build\BatchFiles\Build.bat"
+if exist "C:\Program Files\Epic Games\UE_5.5\Engine\Build\BatchFiles\Build.bat" set compiler="C:\Program Files\Epic Games\UE_5.5\Engine\Build\BatchFiles\Build.bat"
+if exist "D:\Program Files\Epic Games\UE_5.5\Engine\Build\BatchFiles\Build.bat" set compiler="D:\Program Files\Epic Games\UE_5.5\Engine\Build\BatchFiles\Build.bat"
+
 set projExt=*.uproject
 
 pushd %thisPath%

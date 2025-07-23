@@ -54,12 +54,13 @@ void AEnemySpawner::Tick(float DeltaTime)
 		}
 	}
 	else{
-		UKismetSystemLibrary::PrintString(this, FString::Printf(TEXT("GAME CLEAR! FINAL SCORE: %d!"), _score), true, false, FColor::Cyan);
+		//UKismetSystemLibrary::PrintString(this, FString::Printf(TEXT("GAME CLEAR! FINAL SCORE: %d!"), _score), true, false, FColor::Cyan);
 
 		if (_timer >= 63.f && _inGame) {
 			//FString aTChar = FString::Printf(TEXT("echo %%date%%/%%time%%) FINAL SCORE : %d >> %%USERPROFILE%%/Desktop/MarianiGameScore.txt"), _score);
 			//system(TCHAR_TO_ANSI(*aTChar));
-			FGenericPlatformMisc::RequestExit(false);
+			//FGenericPlatformMisc::RequestExit(false);
+
 			_inGame = false;
 		}
 			

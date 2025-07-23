@@ -15,8 +15,8 @@ void SInGameWidget::Construct(const FArguments& InArgs)
 
 	const FMargin ContentPadding = FMargin(50.f, 50.f);
 
-	FString score = FString::Printf(TEXT("SCORE : %d"), points);
-	FText ScoreText = FText::FromString(score);
+	const FString score = FString::Printf(TEXT("SCORE : %d"), OwningHUD->points);
+	const FText ScoreText = FText::FromString(score);
 
 	FSlateFontInfo ScoreTextStyle = FCoreStyle::Get().GetFontStyle("EmbossedText");
 	ScoreTextStyle.Size = 60.f;

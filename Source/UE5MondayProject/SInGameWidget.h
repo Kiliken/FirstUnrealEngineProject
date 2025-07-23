@@ -23,8 +23,6 @@ public:
 	/** Constructs this widget with InArgs */
 	void Construct(const FArguments& InArgs);
 
-	int points = 0;
-
 
 	TWeakObjectPtr<class AMenuHUD> OwningHUD;
 };

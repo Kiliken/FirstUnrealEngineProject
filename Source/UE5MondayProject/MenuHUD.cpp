@@ -10,8 +10,7 @@
 void AMenuHUD::BeginPlay(){
 	Super::BeginPlay();
 
-	GameWidget = SNew(SInGameWidget).OwningHUD(this);
-	MenuWidget = SNew(SMainMenuWidget).OwningHUD(this);
+	
 
 	ShowGame();
 }
@@ -19,7 +18,7 @@ void AMenuHUD::BeginPlay(){
 void AMenuHUD::ShowMenu() {
 
 	if (GEngine && GEngine->GameViewport) {
-		
+		MenuWidget = SNew(SMainMenuWidget).OwningHUD(this);
 		GEngine->GameViewport->AddViewportWidgetContent(SAssignNew(MenuWidgetContainer, SWeakWidget).PossiblyNullContent(MenuWidget.ToSharedRef()));
 	
 		if (PlayerOwner) {
@@ -44,7 +43,7 @@ void AMenuHUD::HideMenu() {
 void AMenuHUD::ShowGame() {
 
 	if (GEngine && GEngine->GameViewport) {
-		
+		GameWidget = SNew(SInGameWidget).OwningHUD(this);
 		GEngine->GameViewport->AddViewportWidgetContent(SAssignNew(MenuWidgetContainer, SWeakWidget).PossiblyNullContent(GameWidget.ToSharedRef()));
 		
 		if (PlayerOwner) {
@@ -55,10 +54,11 @@ void AMenuHUD::ShowGame() {
 }
 
 void AMenuHUD::AddPoints() {
-	GameWidget->points += 1;
-	
-	if (GEngine && GEngine->GameViewport) {
+	points += 1;
 
+
+	if (GEngine && GEngine->GameViewport) {
+		GameWidget = SNew(SInGameWidget).OwningHUD(this);
 		GEngine->GameViewport->AddViewportWidgetContent(SAssignNew(MenuWidgetContainer, SWeakWidget).PossiblyNullContent(GameWidget.ToSharedRef()));
 
 
